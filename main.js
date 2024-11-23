@@ -67,13 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const bearAnchor = mindarThree.addAnchor(1);
     bearAnchor.group.add(bear.scene);
 
-    const audioClip2 = await loadAudio('./assets/sounds/musicband-background.mp3');
+    const audioClip2 = await loadAudio('./assets/sounds/poseidonas.mp3');
     const listener2 = new THREE.AudioListener();
     camera.add(listener2);
     const audio2 = new THREE.PositionalAudio(listener2);
     bearAnchor.group.add(audio2);
     audio2.setBuffer(audioClip2);
-    audio2.setRefDistance(100);
+    audio2.setRefDistance(300);
+    audio2.setVolume(20);
     audio2.setLoop(true);
 
     bearAnchor.onTargetFound = () => {
